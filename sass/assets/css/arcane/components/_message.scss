@@ -1,0 +1,17 @@
+.message {
+  padding: var(--spacer);
+  border-radius: var(--border-radius);
+  color: var(--color-main-bg);
+
+  &.info {
+    background-color: var(--color-user-info);
+  }
+
+  &.warning {
+    background-color: var(--color-user-warning);
+  }
+
+  &.error {
+    background-color: var(--color-user-error);
+  }
+}

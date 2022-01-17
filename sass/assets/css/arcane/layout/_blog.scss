@@ -1,0 +1,63 @@
+article.blog,
+article.post {
+  .meta {
+    color: var(--color-main-3);
+    font-size: 0.8em;
+    margin-bottom: var(--spacer);
+
+    .authors,
+    .tags {
+      @extend .unlink;
+
+      display: inline-flex;
+      gap: var(--spacer-small-3);
+
+      .author,
+      .tag {
+        @extend .float;
+      }
+
+      .tag {
+        @extend .outline;
+        @extend .round;
+
+        padding: 0 .5em;
+      }
+    }
+  }
+}
+
+article.blog {
+  ul.posts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacer);
+    list-style: none;
+    padding: 0;
+
+    li.post {
+      .title {
+        margin-top: 0;
+        margin-bottom: var(--spacer-small-3);
+      }
+
+      .meta {
+        margin-bottom: var(--spacer);
+      }
+
+      .summary p {
+        margin-bottom: var(--spacer-small-3);
+      }
+    }
+  }
+}
+
+article.post {
+  .title {
+    margin-bottom: 0;
+  }
+
+  .meta {
+    margin-bottom: var(--spacer-2);
+  }
+}

@@ -1,16 +1,69 @@
 # The URL the site will be built for
 base_url = "https://example.com"
 
+# The site title and description; used in feeds by default.
+title = "Arcane"
+description = """
+ Write an awesome description for your new site here. You can edit this
+ line in `config.toml`. It will appear in your document head meta (for
+ Google search results) and in your feed.xml site description.
+"""
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
+
+# When set to "true", the generated HTML files are minified.
+minify_html = true
+
+# When set to "true", a feed is automatically generated.
+generate_feed = true
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
+# The taxonomies to be rendered for the site and their configuration of the default languages
+# Example:
+#     taxonomies = [
+#       {name = "tags", feed = true}, # each tag will have its own feed
+#       {name = "tags"}, # you can have taxonomies with the same name in multiple languages
+#       {name = "categories", paginate_by = 5},  # 5 items per page for a term
+#       {name = "authors"}, # Basic definition: no feed or pagination
+#     ]
+#
+taxonomies = [
+  { name = "authors", feed = true },
+  { name = "tags",    feed = true },
+]
+
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-highlight_code = false
+highlight_code = true
+
+# The theme to use for code highlighting.
+highlight_theme = "css"
+highlight_themes_css = [
+  { theme = "base16-ocean-dark",  filename = "assets/css/syntax/dark.css" },
+  { theme = "base16-ocean-light", filename = "assets/css/syntax/light.css" },
+]
+
+# When set to "true", emoji aliases translated to their corresponding
+# Unicode emoji equivalent in the rendered Markdown files. (e.g.: :smile: => 😄)
+render_emoji = true
 
 [extra]
 # Put all your custom variables here
+author = "Zakhary Kaplan"
+
+# Specify date formatting
+format = { date = "%d %b, %Y" }
+
+[[extra.social]]
+platform = "email"
+url = "mailto:zakharykaplan@gmail.com"
+icon = "fa-regular fa-envelope"
+
+[[extra.social]]
+platform = "repo"
+url = "https://github.com/zakharykaplan/arcane"
+icon = "fa-solid fa-code"

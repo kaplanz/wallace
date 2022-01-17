@@ -1,0 +1,32 @@
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+
+  <!-- About -->
+  <title>{{ macros::title() }}</title>
+  {% if config.description %}
+    <meta name="description" content="{{
+      config.description
+      | linebreaksbr
+      | striptags
+      | trim
+    }}"/>
+  {% endif %}
+
+  <!-- CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-color/1.9.1/open-color.min.css"/>
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display"/>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css"/>
+
+  <!-- Custom -->
+  {% include "custom/head.html" ignore missing %}
+</head>

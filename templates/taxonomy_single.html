@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <article class="taxonomy-single">
+    <h1 class="title">
+      {{ term.name }}
+    </h1>
+
+    <div class="content">
+      <ul>
+        {% for page in term.pages %}
+          <li>
+            <a href="{{ page.permalink }}">{{ page.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </article>
+{% endblock content %}

@@ -1,0 +1,241 @@
+<!-- Apache -->
+<!--
+  @param icon:  Apache icon to display.
+  @param class: Clases to apply to the icon.
+-->
+{% macro apache(icon, class) %}
+  <img class="apache {{ class }}" src="https://www.apache.org/icons/{{ icon }}.png"/>
+{% endmacro %}
+<!--
+  @param path:  Path to file to auto generate icon.
+  @param class: Clases to apply to the icon.
+-->
+{% macro fticon(path, class) %}
+  {% set ext = path | split(pat=".") | last | lower %}
+  {% if ext in ["doc", "docx", "pages"] %}
+    {% set icon = "a" %}
+  {% elif ext in ["bin", "exe", "out"] %}
+    {% set icon = "binary" %}
+  {% elif ext in ["c",
+    "cc",
+    "cpp",
+    "cxx",
+    "h",
+    "hh",
+    "hpp"
+  ] %}
+    {% set icon = "c" %}
+  {% elif ext in ["gz", "tgz", "z", "zip"] %}
+    {% set icon = "compressed" %}
+  {% elif ext in ["dmg", "iso"] %}
+    {% set icon = "diskimg" %}
+  {% elif ext in ["dvi"] %}
+    {% set icon = "dvi" %}
+  {% elif ext in ["f",
+    "f77",
+    "f90",
+    "for",
+    "forth",
+    "fs",
+    "fth"
+  ] %}
+    {% set icon = "f" %}
+  {% elif ext in ["gif", "jpeg", "jpg", "png"] %}
+    {% set icon = "image2" %}
+  {% elif ext in ["htm", "html"] %}
+    {% set icon = "layout" %}
+  {% elif ext in ["mp4", "mov"] %}
+    {% set icon = "movie" %}
+  {% elif ext in ["pl", "py"] %}
+    {% set icon = "p" %}
+  {% elif ext in ["diff", "patch"] %}
+    {% set icon = "patch" %}
+  {% elif ext in ["pdf"] %}
+    {% set icon = "pdf" %}
+  {% elif ext in ["ps"] %}
+    {% set icon = "ps" %}
+  {% elif ext in [
+    "bash",
+    "conf",
+    "csh",
+    "js",
+    "ksh",
+    "rs",
+    "sh",
+    "tcl",
+    "tcsh",
+    "zsh"
+  ] %}
+    {% set icon = "script" %}
+  {% elif ext in ["mp3", "wav"] %}
+    {% set icon = "sound2" %}
+  {% elif ext in ["tar"] %}
+    {% set icon = "tar" %}
+  {% elif ext in ["tex"] %}
+    {% set icon = "tex" %}
+  {% elif ext in ["asc", "txt"] %}
+    {% set icon = "txt" %}
+  {% elif ext in ["uu"] %}
+    {% set icon = "uu" %}
+  {% else %}
+    {% set icon = "unknown" %}
+  {% endif %}
+  {{ macros::apache(icon=icon, class=class) }}
+{% endmacro %}
+
+<!-- Copyright -->
+{% macro copyright() %}
+  <p class="copyright">
+    <small>
+      &copy; {{ now() | date(format="%Y") }} {{ config.extra.author | default(value="") }}
+    </small>
+  </p>
+{% endmacro %}
+
+<!-- Navigation -->
+<!--
+  @param content: List of navigation items.
+-->
+{% macro nav(content) %}
+  {% if section %}
+    {% set this = section %}
+  {% elif page %}
+    {% set this = page %}
+  {% else %}
+    {% set this = get_section(path="_index.md") %}
+  {% endif %}
+  {% for section in content.subsections %}
+    {% set section = get_section(path=section) %}
+    <li class="{% if section.path in this.path %}current{% endif %}">
+      <a href="{{ section.path }}">
+        <div class="icon">
+          {{ macros::apache(icon="folder",      class="nohover") }}
+          {{ macros::apache(icon="folder.open", class="hover")   }}
+        </div>
+        <p class="name">{{ section.components | last }}/</p>
+      </a>
+      {% if section.subsections or section.pages or section.assets %}
+        <ul class="subnav">
+          {{ macros::nav(content=section) }}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+  {% for page in content.pages %}
+    <li class="{% if page.path in this.path %}current{% endif %}">
+      <a href="{{ page.path }}">
+        <div class="icon">
+          {{ macros::apache(icon="layout", class="nohover") }}
+          {{ macros::apache(icon="index",  class="hover")   }}
+        </div>
+        <p class="name">{{ page.components | last }}</p>
+      </a>
+    </li>
+  {% endfor %}
+  {% for asset in content.assets %}
+    <li>
+      <a href="{{ asset }}" target="_blank">
+        <div class="icon">
+          {{ macros::fticon(path=asset,   class="nohover") }}
+          {{ macros::apache(icon="index", class="hover")   }}
+        </div>
+        <p class="name">{{ asset | split(pat="/") | last }}</p>
+      </a>
+    </li>
+  {% endfor %}
+{% endmacro %}
+
+<!-- Pagination -->
+{% macro pagination() %}
+  {% if paginator and paginator.number_pagers > 1 %}
+    <ul class="pagination">
+      <li class="{% if not paginator.previous %}disable{% endif %}">
+        <a href="{{ paginator.previous }}">
+          <i class="fa-solid fa-caret-left"></i>
+        </a>
+      </li>
+      <li>{{ paginator.current_index }} of {{ paginator.number_pagers }}</li>
+      <li class="{% if not paginator.next %}disable{% endif %}">
+        <a href="{{ paginator.next }}">
+          <i class="fa-solid fa-caret-right"></i>
+        </a>
+      </li>
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+<!-- Posts -->
+<!--
+  @param post: Post to generate metadata for.
+-->
+{% macro post_meta(post) %}
+  <p class="meta">
+    <span>
+      {{ post.date | default(value=now()) | date(format=config.extra.format.date)}}
+    </span>
+    <span>&nbsp;&bull;&nbsp;</span>
+    <span>
+      {{ post.reading_time }} minute read
+    </span>
+    {% if post.taxonomies.authors %}
+      <span>&nbsp;&bull;&nbsp;</span>
+      <a class="icon unlink" href="/authors">
+        {% if post.taxonomies.authors | length > 1 %}
+          <i class="fa-solid fa-users">&nbsp;</i>
+        {% else %}
+          <i class="fa-solid fa-user">&nbsp;</i>
+        {% endif %}
+      </a>
+      <span class="authors">
+        {% for author in post.taxonomies.authors %}
+          <a class="author" href="/authors/{{ author | slugify }}">
+            {{- author -}}
+            {%- if not loop.last %},{% endif -%}
+          </a>
+        {% endfor %}
+      </span>
+    {% endif %}
+    {% if post.taxonomies.tags %}
+      <span>&nbsp;&bull;&nbsp;</span>
+      <a class="icon unlink" href="/tags">
+        {% if post.taxonomies.tags | length > 1 %}
+          <i class="fa-solid fa-tags">&nbsp;</i>
+        {% else %}
+          <i class="fa-solid fa-tag">&nbsp;</i>
+        {% endif %}
+      </a>
+      <span class="tags">
+        {% for tag in post.taxonomies.tags %}
+          <a class="tag" href="/tags/{{ tag | slugify }}">#{{ tag }}</a>
+        {% endfor %}
+      </span>
+    {% endif %}
+  </p>
+{% endmacro %}
+
+<!-- Social -->
+<!--
+  @param profile: Social profile to generate.
+    @subparam url:  Personalized URL to user profile.
+    @subparam icon: Font Awesome icon to display for the social network.
+-->
+{% macro social(profile) %}
+  <li>
+    <a href="{{ profile.url }}" target="_blank">
+      <i class="{{ profile | get(key='icon', default='fa-solid fa-link') }}"></i>
+    </a>
+  </li>
+{% endmacro %}
+
+<!-- Title -->
+{% macro title() %}
+  {%- if section and section.path == "/" -%}
+    {{ config.title }}
+  {%- elif page.title -%}
+    {{ page.title }}
+  {%- elif section.title -%}
+    {{ section.title }} - {{ config.title }}
+  {%- else -%}
+    {{ config.title }}
+  {%- endif -%}
+{% endmacro %}

@@ -1,0 +1,23 @@
+ul.pagination {
+  display: flex;
+  gap: var(--spacer);
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+
+  li {
+    @extend .float;
+
+    padding: 0;
+
+    a {
+      height: 100%;
+      padding: 0 var(--spacer-small-2);
+      width: 100%;
+    }
+
+    &.disable {
+      visibility: hidden;
+    }
+  }
+}

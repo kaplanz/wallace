@@ -1,0 +1,11 @@
+<footer class="footer">
+  {% if config.extra.social %}
+    <ul class="social">
+      {% for profile in config.extra.social %}
+        {{ macros::social(profile=profile) }}
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {{ macros::copyright() }}
+</footer>

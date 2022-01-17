@@ -1,0 +1,78 @@
+// -- Screen --
+$screen-sm: 32rem;
+$screen-md: 48rem;
+$screen-lg: 64rem;
+$screen-xl: 80rem;
+
+:root {
+  // -- Accent --
+  // Light mode
+  @media (prefers-color-scheme: light) {
+    --color-accent-1:    var(--oc-cyan-9);
+    --color-accent-2:    var(--oc-cyan-8);
+    --color-accent-bg-1: var(--oc-cyan-2);
+    --color-accent-bg-2: var(--oc-cyan-3);
+  }
+  // Dark mode
+  @media (prefers-color-scheme: dark) {
+    --color-accent-1:     var(--oc-cyan-5);
+    --color-accent-2:     var(--oc-cyan-4);
+    --color-accent-bg-1:  var(--oc-cyan-9);
+    --color-accent-bg-2:  var(--oc-cyan-7);
+  }
+
+  // -- Colour --
+  // Light mode
+  @media (prefers-color-scheme: light) {
+    --color-border:       var(--oc-gray-5);
+    --color-link:         var(--color-accent-1);
+    --color-link-hover:   var(--color-accent-2);
+    --color-main:         var(--oc-gray-8);
+    --color-main-2:       var(--oc-gray-7);
+    --color-main-3:       var(--oc-gray-6);
+    --color-main-bg:      var(--oc-gray-0);
+    --color-main-bg-2:    var(--oc-gray-2);
+    --color-main-bg-3:    var(--oc-gray-4);
+    --color-shadow:       var(--oc-gray-5);
+    --color-user-error:   var(--oc-red-7);
+    --color-user-info:    var(--oc-green-7);
+    --color-user-warning: var(--oc-yellow-7);
+  }
+  // Dark mode
+  @media (prefers-color-scheme: dark) {
+    --color-border:       var(--oc-gray-6);
+    --color-link:         var(--color-accent-1);
+    --color-link-hover:   var(--color-accent-2);
+    --color-main:         var(--oc-gray-3);
+    --color-main-2:       var(--oc-gray-0);
+    --color-main-3:       var(--oc-gray-5);
+    --color-main-bg:      var(--oc-gray-9);
+    --color-main-bg-2:    var(--oc-gray-8);
+    --color-main-bg-3:    var(--oc-gray-7);
+    --color-shadow:       var(--oc-black);
+    --color-user-error:   var(--oc-red-4);
+    --color-user-info:    var(--oc-green-4);
+    --color-user-warning: var(--oc-yellow-4);
+  }
+
+  // -- Font --
+  --font-family-mono:     "Fira Code";
+  --font-family-sans:     "Cabin";
+  --font-family-serif:    "Playfair Display";
+  --font-weight-bold:     600;
+  --font-weight-semibold: 500;
+  --font-weight-normal:   400;
+  --font-weight-light:    300;
+  --font-size:            16px;
+  --line-height:          1.5;
+
+  // -- Shape --
+  --border-radius: .5em;
+
+  // -- Spacing --
+  --spacer:         1rem;
+  --spacer-2:       calc(var(--spacer) * 2);
+  --spacer-3:       calc(var(--spacer) * 3);
+  --spacer-small-2: calc(var(--spacer) / 2);
+  --spacer-small-3: calc(var(--spacer) / 3);
+}

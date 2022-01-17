@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <article class="taxonomy-list">
+    <h1 class="title">
+      {{ taxonomy.name | title }}
+    </h1>
+
+    <div class="content">
+      <ul>
+        {% for term in terms %}
+          <li>
+            <a href="{{ term.permalink }}">{{ term.name }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </article>
+{% endblock content %}

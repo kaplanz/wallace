@@ -1,0 +1,14 @@
+<nav class="nav">
+  <ul class="main">
+    <li>
+      <a href="/">
+        <div class="icon">
+          {{ macros::apache(icon="comp.gray", class="nohover") }}
+          {{ macros::apache(icon="comp.blue", class="hover") }}
+        </div>
+        <p class="name">~/</p>
+      </a>
+    </li>
+    {{ macros::nav(content=get_section(path="_index.md")) }}
+  </ul>
+</nav>
