@@ -5,9 +5,8 @@ title: Welcome to Zola
 taxonomies:
   authors:
     - Zakhary Kaplan
-  tags:
-    - welcome
-    - zola
+  categories: [meta]
+  tags: [welcome, zola]
 ---
 
 You’ll find this post in your `content/blog` directory. Go ahead and edit it and re-build the site to see your changes.

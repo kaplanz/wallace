@@ -1,27 +1,22 @@
 article.blog,
 article.post {
   .meta {
+    @extend .unlink;
+
     color: var(--color-main-3);
     font-size: 0.8em;
     margin-bottom: var(--spacer);
 
     .authors,
+    .categories,
     .tags {
-      @extend .unlink;
-
       display: inline-flex;
       gap: var(--spacer-small-3);
 
       .author,
+      .category,
       .tag {
         @extend .float;
-      }
-
-      .tag {
-        @extend .outline;
-        @extend .round;
-
-        padding: 0 .5em;
       }
     }
   }

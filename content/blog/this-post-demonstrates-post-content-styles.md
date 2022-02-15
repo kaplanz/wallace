@@ -1,11 +1,12 @@
 ---
-author:
-- Bart Simpson
-- Nelson Mandela Muntz
-categories: junk
 date: 2020-01-01
 template: post.html
 title: "This post demonstrates post content styles"
+taxonomies:
+  authors:
+    - Bart Simpson
+    - Nelson Mandela Muntz
+  categories: [junk]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.

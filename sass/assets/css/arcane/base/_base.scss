@@ -66,6 +66,12 @@ ol,
 dl {
   margin-bottom: var(--spacer);
   margin-top: 0;
+
+  ul,
+  ol,
+  dl {
+    margin-bottom: 0,
+  }
 }
 
 dt {
@@ -114,7 +120,7 @@ pre {
   display: block;
   margin: var(--spacer) 0;
   overflow: auto;
-  padding: var(--spacer);
+  padding: var(--spacer-small-2);
 
   code {
     background-color: inherit;

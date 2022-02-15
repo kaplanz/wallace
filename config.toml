@@ -32,7 +32,8 @@ build_search_index = false
 #
 taxonomies = [
   { name = "authors", feed = true },
-  { name = "tags",    feed = true },
+  { name = "categories", feed = true },
+  { name = "tags", feed = true },
 ]
 
 [markdown]
@@ -56,8 +57,10 @@ render_emoji = true
 author = "Zakhary Kaplan"
 
 # Specify date formatting
-format = { date = "%d %b, %Y" }
+[extra.format]
+date = "%d %b, %Y"
 
+# Define socials
 [[extra.social]]
 platform = "email"
 url = "mailto:zakharykaplan@gmail.com"

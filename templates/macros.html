@@ -179,13 +179,15 @@
     </span>
     {% if post.taxonomies.authors %}
       <span>&nbsp;&bull;&nbsp;</span>
-      <a class="icon unlink" href="/authors">
-        {% if post.taxonomies.authors | length > 1 %}
-          <i class="fa-solid fa-users">&nbsp;</i>
-        {% else %}
-          <i class="fa-solid fa-user">&nbsp;</i>
-        {% endif %}
-      </a>
+      <span class="icon">
+        <a href="/authors">
+          {% if post.taxonomies.authors | length > 1 %}
+            <i class="fa-solid fa-users">&nbsp;</i>
+          {% else %}
+            <i class="fa-solid fa-user">&nbsp;</i>
+          {% endif %}
+        </a>
+      </span>
       <span class="authors">
         {% for author in post.taxonomies.authors %}
           <a class="author" href="/authors/{{ author | slugify }}">
@@ -195,15 +197,34 @@
         {% endfor %}
       </span>
     {% endif %}
+    {% if post.taxonomies.categories %}
+      <span>&nbsp;&bull;&nbsp;</span>
+      <span class="icon">
+        <a href="/categories">
+          {% if post.taxonomies.categories | length > 1 %}
+            <i class="fa-solid fa-folder-tree">&nbsp;</i>
+          {% else %}
+            <i class="fa-solid fa-folder">&nbsp;</i>
+          {% endif %}
+        </a>
+      </span>
+      <span class="categories">
+        {% for category in post.taxonomies.categories %}
+          <a class="category" href="/categories/{{ category | slugify }}">{{ category }}</a>
+        {% endfor %}
+      </span>
+    {% endif %}
     {% if post.taxonomies.tags %}
       <span>&nbsp;&bull;&nbsp;</span>
-      <a class="icon unlink" href="/tags">
-        {% if post.taxonomies.tags | length > 1 %}
-          <i class="fa-solid fa-tags">&nbsp;</i>
-        {% else %}
-          <i class="fa-solid fa-tag">&nbsp;</i>
-        {% endif %}
-      </a>
+      <span class="icon">
+        <a href="/tags">
+          {% if post.taxonomies.tags | length > 1 %}
+            <i class="fa-solid fa-tags">&nbsp;</i>
+          {% else %}
+            <i class="fa-solid fa-tag">&nbsp;</i>
+          {% endif %}
+        </a>
+      </span>
       <span class="tags">
         {% for tag in post.taxonomies.tags %}
           <a class="tag" href="/tags/{{ tag | slugify }}">#{{ tag }}</a>
