@@ -40,8 +40,8 @@ theme = "arcane"
 
 ### Blog
 
-To enable the blog, you must create a blog directory, for example in
-`content/blog/_index.md`, as follows:
+To enable the blog, you must create a blog directory. For example, in
+`content/blog` declare the the blog's `_index.md` as follows:
 
 ```
 +++
