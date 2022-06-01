@@ -104,7 +104,7 @@
   {% else %}
     {% set this = get_section(path="_index.md") %}
   {% endif %}
-  {% for section in content.subsections %}
+  {% for section in content.subsections | sort %}
     {% set section = get_section(path=section) %}
     <li class="{% if section.path in this.path %}current{% endif %}">
       <a href="{{ section.path }}">
@@ -132,7 +132,7 @@
       </a>
     </li>
   {% endfor %}
-  {% for asset in content.assets %}
+  {% for asset in content.assets | sort %}
     <li>
       <a href="{{ asset }}" target="_blank">
         <div class="icon">
