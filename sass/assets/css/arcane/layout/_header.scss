@@ -11,13 +11,13 @@ header.header {
     max-width: $screen-md;
     width: 100%;
 
-    @media screen and (min-width: $screen-md) {
+    @media screen and (min-width: $screen-sm) {
       padding-left: var(--spacer-2);
       padding-right: var(--spacer-2);
     }
 
     @media screen and (min-width: $screen-xl) {
-      max-width: $screen-xl;
+      max-width: $screen-lg;
       padding-left: var(--spacer-3);
       padding-right: var(--spacer-3);
     }
