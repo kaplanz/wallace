@@ -6,6 +6,10 @@
       {{ section.title }}
     </h1>
 
+    <div class="content">
+      {{ section.content | safe }}
+    </div>
+
     <ul class="pages">
       {% for page in section.pages %}
         <li>
