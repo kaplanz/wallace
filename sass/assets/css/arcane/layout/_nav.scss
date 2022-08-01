@@ -85,6 +85,10 @@ nav.nav {
 
         li {
           position: relative;
+
+          a {
+            padding: var(--spacer-small-3);
+          }
         }
 
         ul.subnav {
