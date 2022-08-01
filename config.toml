@@ -63,7 +63,7 @@ date = "%d %b, %Y"
 # Define socials.
 [[extra.social]]
 platform = "email"
-url = "mailto:zakharykaplan@gmail.com"
+url = "mailto:me@zakhary.dev"
 icon = "fa-regular fa-envelope"
 
 [[extra.social]]
