@@ -257,10 +257,10 @@
       {{- page.slug | replace(from="-", to=" ") | title -}}
     {%- endif -%}
   {%- elif section -%}
-    {%- if section.path == "/" -%}
-      {{- config.title -}}
-    {%- elif section.title -%}
+    {%- if section.title -%}
       {{- section.title -}}
+    {%- elif section.path == "/" -%}
+      {{- config.title -}}
     {%- else -%}
       {{- section.components | last | replace(from="-", to=" ") | title -}}
     {%- endif -%}
