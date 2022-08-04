@@ -6,6 +6,10 @@
       {{ section.title | default(value="Blog") }}
     </h1>
 
+    <div>
+      {{ section.content | safe }}
+    </div>
+
     <ul class="posts">
       {% for post in paginator.pages | default(value=section.pages) %}
         <li class="post">
