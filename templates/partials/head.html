@@ -1,31 +1,32 @@
 <head>
-  <meta charset="utf-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <!-- About -->
-  <title>{{ macros::title() }}</title>
+  <!-- Site -->
+  <title>{{- macros::title() -}}</title>
   {% if config.description %}
-    <meta name="description" content="{{
+    <meta name="description" content="{{-
       config.description
       | linebreaksbr
       | striptags
       | trim
-    }}"/>
+    -}}"/>
   {% endif %}
 
-  <!-- CDN -->
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-color/1.9.1/open-color.min.css"/>
-
-  <!-- Fonts -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif"/>
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="/assets/css/style.css"/>
+  <link rel="stylesheet" href="/style.css">
 
   <!-- Custom -->
   {% include "custom/head.html" ignore missing %}

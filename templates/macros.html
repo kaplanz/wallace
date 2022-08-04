@@ -134,7 +134,7 @@
   {% endfor %}
   {% for asset in content.assets | sort %}
     <li>
-      <a href="{{ asset }}" target="_blank">
+      <a target="_blank" href="{{ asset }}">
         <div class="icon">
           {{ macros::fticon(path=asset,   class="nohover") }}
           {{ macros::apache(icon="index", class="hover")   }}
@@ -242,7 +242,7 @@
 -->
 {% macro social(profile) %}
   <li>
-    <a href="{{ profile.url }}" target="_blank">
+    <a target="_blank" href="{{ profile.url }}">
       <i class="{{ profile | get(key='icon', default='fa-solid fa-link') }}"></i>
     </a>
   </li>
