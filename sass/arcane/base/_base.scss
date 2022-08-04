@@ -16,8 +16,8 @@ body {
 }
 
 body {
-  background-color: var(--color-main-bg);
-  color: var(--color-main);
+  background-color: var(--color-bg);
+  color: var(--color-fg);
   display: flex;
   flex-direction: column;
   font-family: var(--font-family-sans);
@@ -32,7 +32,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--color-main-2);
+  color: var(--color-fg-2);
   font-family: var(--font-family-serif);
 }
 
@@ -110,7 +110,7 @@ pre {
 }
 
 code {
-  background-color: var(--color-main-bg-2);
+  background-color: var(--color-bg-2);
   border-bottom: 1.5px solid var(--color-border);
   border-radius: var(--border-radius);
   padding: .05em .25em;
@@ -157,7 +157,7 @@ thead th {
 mark {
   background-color: var(--color-user-info);
   border-radius: var(--border-radius);
-  color: var(--color-main-bg);
+  color: var(--color-bg);
   padding: .15em;
 }
 

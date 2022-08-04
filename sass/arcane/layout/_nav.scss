@@ -1,7 +1,25 @@
 nav.nav {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $screen-md;
+  width: 100%;
+
+  @media screen and (min-width: $screen-sm) {
+    padding-left: var(--spacer-2);
+    padding-right: var(--spacer-2);
+  }
+
+  @media screen and (min-width: $screen-xl) {
+    max-width: $screen-lg;
+    padding-left: var(--spacer-3);
+    padding-right: var(--spacer-3);
+  }
+
   ul {
-    background-color: var(--color-main-bg-2);
-    color: var(--color-main-2);
+    background-color: var(--color-bg-2);
+    color: var(--color-fg-2);
     display: flex;
     gap: var(--spacer-small-2);
     list-style-type: none;
@@ -42,12 +60,12 @@ nav.nav {
       }
 
       &.current {
-        background-color: var(--color-main-bg-3);
+        background-color: var(--color-bg-3);
       }
 
       &:hover {
-        background-color: var(--color-accent-2);
-        color: var(--color-main-bg-2);
+        background-color: var(--color-accent-fg);
+        color: var(--color-bg-2);
       }
 
       > *:first-child > .icon img {
