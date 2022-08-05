@@ -26,6 +26,13 @@ body {
   min-height: 100vh;
 }
 
+body,
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 h1,
 h2,
 h3,
