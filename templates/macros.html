@@ -255,15 +255,21 @@
       {{- page.title -}}
     {%- else -%}
       {{- page.slug | replace(from="-", to=" ") | title -}}
-    {%- endif -%}
+    {%- endif %} | {{ config.title }}
   {%- elif section -%}
-    {%- if section.title -%}
-      {{- section.title -}}
-    {%- elif section.path == "/" -%}
-      {{- config.title -}}
+    {%- if section.path == "/" -%}
+      {%- if section.title -%}
+        {{- section.title -}}
+      {%- else -%}
+        {{- config.title -}}
+      {%- endif -%}
     {%- else -%}
-      {{- section.components | last | replace(from="-", to=" ") | title -}}
-    {%- endif -%}
+      {%- if section.title -%}
+        {{- section.title -}}
+      {%- else -%}
+        {{- section.components | last | replace(from="-", to=" ") | title -}}
+      {%- endif %} | {{ config.title }}
+    {%- endif %}
   {%- else -%}
     {{- config.title -}}
   {%- endif -%}
