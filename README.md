@@ -1,10 +1,10 @@
 ---
-title: Arcane
+title: Wallace
 ---
 
-# arcane
+# wallace
 
-Arcane is a modern homepage inspired by the classic web iconography.
+Wallace is a modern homepage inspired by the classic web iconography.
 
 ![](docs/screenshot.png)
 
@@ -27,13 +27,13 @@ First download this theme to your `themes` directory:
 
 ```bash
 cd themes
-git clone https://github.com/zakharykaplan/arcane.git
+git clone https://github.com/zakharykaplan/wallace.git
 ```
 
 and then enable it in your `config.toml`:
 
 ```toml
-theme = "arcane"
+theme = "wallace"
 ```
 
 ## Features
@@ -56,7 +56,7 @@ pagination.
 
 ### Navigation
 
-Arcane will automatically populate the navigation menu bar with your pages,
+Wallace will automatically populate the navigation menu bar with your pages,
 posts, co-located assets, taxonomies (if enabled; see below).
 
 ### Taxonomies

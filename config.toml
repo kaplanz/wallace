@@ -2,7 +2,7 @@
 base_url = "https://example.com"
 
 # The site title and description; used in feeds by default.
-title = "Arcane"
+title = "Wallace"
 description = """
  Write an awesome description for your new site here. You can edit this
  line in `config.toml`. It will appear in your document head meta (for
@@ -68,5 +68,5 @@ icon = "fa-regular fa-envelope"
 
 [[extra.social]]
 platform = "repo"
-url = "https://github.com/zakharykaplan/arcane"
+url = "https://github.com/zakharykaplan/wallace"
 icon = "fa-solid fa-code"
