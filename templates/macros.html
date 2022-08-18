@@ -107,7 +107,7 @@
   {% for section in content.subsections %}
     {% set section = get_section(path=section) %}
     <li class="{% if section.path in this.path %}current{% endif %}">
-      <a href="{{ section.path }}">
+      <a href="{{ section.permalink }}">
         <div class="icon">
           {{ macros::apache(icon="folder",      class="nohover") }}
           {{ macros::apache(icon="folder.open", class="hover")   }}
@@ -123,7 +123,7 @@
   {% endfor %}
   {% for page in content.pages %}
     <li class="{% if page.path in this.path %}current{% endif %}">
-      <a href="{{ page.path }}">
+      <a href="{{ page.permalink }}">
         <div class="icon">
           {{ macros::apache(icon="layout", class="nohover") }}
           {{ macros::apache(icon="index",  class="hover")   }}
