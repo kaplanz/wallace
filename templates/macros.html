@@ -180,7 +180,7 @@
     {% if post.taxonomies.authors %}
       <span>&nbsp;&bull;&nbsp;</span>
       <span class="icon">
-        <a href="/authors">
+        <a href="{{- config.base_url -}}/authors">
           {% if post.taxonomies.authors | length > 1 %}
             <i class="fa-solid fa-users">&nbsp;</i>
           {% else %}
@@ -190,7 +190,7 @@
       </span>
       <span class="authors">
         {% for author in post.taxonomies.authors %}
-          <a class="author" href="/authors/{{ author | slugify }}">
+          <a class="author" href="{{- config.base_url -}}/authors/{{ author | slugify }}">
             {{- author -}}
             {%- if not loop.last %},{% endif -%}
           </a>
@@ -200,7 +200,7 @@
     {% if post.taxonomies.categories %}
       <span>&nbsp;&bull;&nbsp;</span>
       <span class="icon">
-        <a href="/categories">
+        <a href="{{- config.base_url -}}/categories">
           {% if post.taxonomies.categories | length > 1 %}
             <i class="fa-solid fa-folder-tree">&nbsp;</i>
           {% else %}
@@ -210,14 +210,14 @@
       </span>
       <span class="categories">
         {% for category in post.taxonomies.categories %}
-          <a class="category" href="/categories/{{ category | slugify }}">{{ category }}</a>
+      <a class="category" href="{{- config.base_url -}}/categories/{{ category | slugify }}">{{ category }}</a>
         {% endfor %}
       </span>
     {% endif %}
     {% if post.taxonomies.tags %}
       <span>&nbsp;&bull;&nbsp;</span>
       <span class="icon">
-        <a href="/tags">
+        <a href="{{- config.base_url -}}/tags">
           {% if post.taxonomies.tags | length > 1 %}
             <i class="fa-solid fa-tags">&nbsp;</i>
           {% else %}
@@ -227,7 +227,7 @@
       </span>
       <span class="tags">
         {% for tag in post.taxonomies.tags %}
-          <a class="tag" href="/tags/{{ tag | slugify }}">#{{ tag }}</a>
+          <a class="tag" href="{{- config.base_url -}}/tags/{{ tag | slugify }}">#{{ tag }}</a>
         {% endfor %}
       </span>
     {% endif %}
