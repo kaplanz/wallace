@@ -1,4 +1,7 @@
 <nav class="nav">
+  {%- if page -%}
+    {%- set section = get_section(path=page.ancestors | last) -%}
+  {%- endif -%}
   <ul class="main">
     <li>
       <a href="{{- config.base_url -}}">
@@ -9,7 +12,7 @@
         <p class="name">~/</p>
       </a>
     </li>
-    {%- if current_path and current_path != "/" -%}
+    {%- if section.path and section.path != "/" -%}
       <li>
         <a href="{{- current_url -}}..">
           <div class="icon">
