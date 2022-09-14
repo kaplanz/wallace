@@ -6,8 +6,6 @@ title: Wallace
 
 Wallace is a modern homepage inspired by the classic web iconography.
 
-![](docs/screenshot.png)
-
 ## Contents
 
 - [Installation](#installation)
