@@ -9,6 +9,17 @@
         <p class="name">~/</p>
       </a>
     </li>
+    {%- if current_path and current_path != "/" -%}
+      <li>
+        <a href="{{- current_url -}}..">
+          <div class="icon">
+            {{ macros::apache(icon="back", class="nohover") }}
+            {{ macros::apache(icon="back", class="hover") }}
+          </div>
+          <p class="name">..</p>
+        </a>
+      </li>
+    {%- endif -%}
     {{ macros::nav(content=get_section(path="_index.md")) }}
   </ul>
 </nav>
