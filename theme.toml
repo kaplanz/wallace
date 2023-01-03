@@ -1,11 +1,11 @@
 name = "wallace"
 description = "A modern homepage inspired by the classic web iconography."
 license = "MIT"
-homepage = "https://github.com/zakharykaplan/wallace"
+homepage = "https://github.com/kaplanz/wallace"
 # The minimum version of Zola required
 min_version = "0.14.0"
 # An optional live demo URL
-demo = "https://zakharykaplan.github.io/wallace"
+demo = "https://kaplanz.github.io/wallace"
 
 # Any variable there can be overridden in the end user `config.toml`
 # You don't need to prefix variables by the theme name but as this will

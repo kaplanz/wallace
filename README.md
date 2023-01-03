@@ -25,7 +25,7 @@ First download this theme to your `themes` directory:
 
 ```bash
 cd themes
-git clone https://github.com/zakharykaplan/wallace.git
+git clone https://github.com/kaplanz/wallace.git
 ```
 
 and then enable it in your `config.toml`:
@@ -115,6 +115,6 @@ within the [config](config.toml) file.
 ```toml
 [[extra.social]]
 platform = "github"
-url = "https://github.com/zakharykaplan"
+url = "https://github.com/kaplanz"
 icon = "fa-brands fa-github"
 ```
