@@ -9,21 +9,21 @@ html {
 }
 
 html,
-main,
 body {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-fg);
-  display: flex;
-  flex-direction: column;
-  font-family: var(--font-family-sans);
+  @extend .color;
+  @extend .font;
+  @extend .main;
+
+  min-height: 100vh;
+
   font-size: var(--font-size);
   line-height: var(--line-height);
-  min-height: 100vh;
+  font-weight: normal;
 }
 
 body,
@@ -39,13 +39,26 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--color-fg-2);
-  font-family: var(--font-family-serif);
+  @extend .font, .serif;
+
+  margin-top: 0;
+  margin-bottom: var(--spacer);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--spacer);
 }
 
 a {
-  color: var(--color-link);
   text-decoration: none;
+  color: var(--color-link);
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    color: var(--color-link-hover);
+  }
 
   &:visited {
     color: var(--color-link);
@@ -55,42 +68,44 @@ a {
       color: var(--color-link-hover);
     }
   }
-
-  &:hover,
-  &:focus {
-    color: var(--color-link-hover);
-    text-decoration: underline;
-  }
-}
-
-p {
-  margin-bottom: var(--spacer);
-  margin-top: 0;
 }
 
 ul,
 ol,
 dl {
-  margin-bottom: var(--spacer);
   margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
 
-  ul,
-  ol,
-  dl {
-    margin-bottom: 0,
-  }
+ol ol,
+ul ol {
+  list-style-type: lower-roman;
+}
+
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+dd {
+  margin-left: 0;
 }
 
 dt {
-  font-style: italic;
-  font-weight: var(--font-weight-bold);
   margin-top: var(--spacer-small-2);
+
+  font-weight: var(--font-weight-bold);
+  font-style: italic;
 }
 
 blockquote {
-  border-left: .25em solid var(--color-border);
-  margin: 0 0 var(--spacer) 0;
   opacity: .65;
+
+  margin: 0 0 var(--spacer) 0;
+  border-left: .25em solid var(--color-border);
   padding: 0 var(--spacer);
 }
 
@@ -99,15 +114,16 @@ figure {
 }
 
 figcaption {
-  font-size: .85em;
   margin-bottom: var(--spacer);
+
+  font-size: .85em;
 }
 
 img {
-  border-radius: var(--border-radius);
   display: block;
-  margin-bottom: var(--spacer);
-  margin-top: 0;
+
+  margin: var(--spacer);
+  border-radius: var(--border-radius);
   max-width: 100%;
 }
 
@@ -117,39 +133,43 @@ pre {
 }
 
 code {
-  background-color: var(--color-bg-2);
   border-bottom: 1.5px solid var(--color-border);
   border-radius: var(--border-radius);
   padding: .05em .25em;
+
+  background-color: var(--color-bg-2);
 }
 
 pre {
-  border-radius: var(--border-radius);
   display: block;
-  margin: var(--spacer) 0;
+
   overflow: auto;
+
+  margin: var(--spacer) 0;
+  border-radius: var(--border-radius);
   padding: var(--spacer-small-2);
 
   code {
-    background-color: inherit;
     border: 0;
     padding: 0;
+
+    background-color: inherit;
   }
 }
 
 table {
-  border-collapse: collapse;
-  border: 0 solid var(--color-border);
-  margin-bottom: var(--spacer);
   margin-top: 0;
+  margin-bottom: var(--spacer);
+  border: 0 solid var(--color-border);
+  border-collapse: collapse;
   width: 100%;
 }
 
 td,
 th {
-  border-color: inherit;
-  border-style: solid;
   border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: inherit;
   padding: .25em .5em;
 }
 
@@ -162,17 +182,19 @@ thead th {
 }
 
 mark {
-  background-color: var(--color-user-info);
   border-radius: var(--border-radius);
-  color: var(--color-bg);
   padding: .15em;
+
+  color: var(--color-bg);
+  background-color: var(--color-user-info);
 }
 
 hr {
-  background-color: var(--color-border);
   border: 0;
-  height: 0.5px;
   width: 100%;
+  height: 0.5px;
+
+  background-color: var(--color-border);
 }
 
 abbr {
@@ -181,6 +203,7 @@ abbr {
 
   &[title] {
     border-bottom: 1px dotted var(--color-border);
+
     cursor: help;
   }
 }

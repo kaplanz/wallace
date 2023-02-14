@@ -1,0 +1,48 @@
+.ft,
+.font {
+  &.main {
+    font-family: var(--font-main-family);
+  }
+
+  // Family
+  &-cursive,
+  &.cursive {
+    font-family: var(--font-family-cursive), cursive;
+  }
+
+  &-mono,
+  &.mono {
+    font-family: var(--font-family-mono), monospace;
+  }
+
+  &-sans,
+  &.sans {
+    font-family: var(--font-family-sans), sans-serif;
+  }
+
+  &-serif,
+  &.serif {
+    font-family: var(--font-family-serif), serif;
+  }
+
+  // Weight
+  &-bold,
+  &.bold {
+    font-weight: var(--font-weight-bold);
+  }
+
+  &-semi,
+  &.semi {
+    font-weight: var(--font-weight-semi);
+  }
+
+  &-normal,
+  &.normal {
+    font-weight: var(--font-weight-normal);
+  }
+
+  &-light,
+  &.bold {
+    font-weight: var(--font-weight-light);
+  }
+}

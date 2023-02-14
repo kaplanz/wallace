@@ -1,0 +1,95 @@
+// -- Screen --
+$screen-xs:  16rem;
+$screen-sm:  32rem;
+$screen-md:  48rem;
+$screen-lg:  72rem;
+$screen-xl: 108rem;
+
+:root {
+  // -- Colour --
+  @media (prefers-color-scheme: light) {
+    // Accent
+    --color-accent-fg:  var(--oc-violet-8);
+    --color-accent-bg:  var(--oc-violet-2);
+    // Element
+    --color-border:     var(--oc-gray-5);
+    --color-link:       var(--oc-blue-9);
+    --color-link-hover: var(--oc-blue-8);
+    --color-shadow:     var(--oc-gray-5);
+    // Foreground
+    --color-fg:         var(--oc-gray-8);
+    --color-fg-2:       var(--oc-gray-7);
+    --color-fg-3:       var(--oc-gray-6);
+    // Background
+    --color-bg:         var(--oc-gray-0);
+    --color-bg-2:       var(--oc-gray-2);
+    --color-bg-3:       var(--oc-gray-4);
+    // Message
+    --color-user-error-bg: var(--oc-red-2);
+    --color-user-info-bg:  var(--oc-green-2);
+    --color-user-warn-bg:  var(--oc-yellow-2);
+    --color-user-debug-bg: var(--oc-blue-2);
+    --color-user-trace-bg: var(--oc-cyan-2);
+    --color-user-error-fg: var(--oc-red-7);
+    --color-user-info-fg:  var(--oc-green-7);
+    --color-user-warn-fg:  var(--oc-yellow-7);
+    --color-user-debug-fg: var(--oc-blue-7);
+    --color-user-trace-fg: var(--oc-cyan-7);
+  }
+  @media (prefers-color-scheme: dark) {
+    // Accent
+    --color-accent-fg:  var(--oc-violet-4);
+    --color-accent-bg:  var(--oc-violet-9);
+    // Element
+    --color-border:     var(--oc-gray-6);
+    --color-link:       var(--oc-blue-5);
+    --color-link-hover: var(--oc-blue-4);
+    --color-shadow:     var(--oc-black);
+    // Foreground
+    --color-fg:         var(--oc-gray-3);
+    --color-fg-2:       var(--oc-gray-0);
+    --color-fg-3:       var(--oc-gray-5);
+    // Background
+    --color-bg:         var(--oc-gray-9);
+    --color-bg-2:       var(--oc-gray-8);
+    --color-bg-3:       var(--oc-gray-7);
+    // Message
+    --color-user-error-bg: var(--oc-red-7);
+    --color-user-info-bg:  var(--oc-green-7);
+    --color-user-warn-bg:  var(--oc-yellow-7);
+    --color-user-debug-bg: var(--oc-blue-7);
+    --color-user-trace-bg: var(--oc-cyan-7);
+    --color-user-error-fg: var(--oc-red-4);
+    --color-user-info-fg:  var(--oc-green-4);
+    --color-user-warn-fg:  var(--oc-yellow-4);
+    --color-user-debug-fg: var(--oc-blue-4);
+    --color-user-trace-fg: var(--oc-cyan-4);
+  }
+
+  // -- Font --
+  // Defaults
+  --font-main-family: var(--font-family-sans);
+  // Family
+  --font-family-cursive: "Corinthia";
+  --font-family-mono:    "Fira Code";
+  --font-family-sans:    "Noto Sans";
+  --font-family-serif:   "Noto Serif";
+  // Weight
+  --font-weight-bold:    600;
+  --font-weight-semi:    500;
+  --font-weight-normal:  400;
+  --font-weight-light:   300;
+  // Text
+  --font-size:           16px;
+  --line-height:         1.5;
+
+  // -- Shape --
+  --border-radius: .5em;
+
+  // -- Spacing --
+  --spacer:         1rem;
+  --spacer-2:       calc(var(--spacer) * 2);
+  --spacer-3:       calc(var(--spacer) * 3);
+  --spacer-small-2: calc(var(--spacer) / 2);
+  --spacer-small-3: calc(var(--spacer) / 3);
+}

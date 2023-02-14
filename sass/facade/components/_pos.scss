@@ -1,0 +1,17 @@
+.pos,
+.position {
+  &-left,
+  &.left {
+    float: left;
+  }
+
+  &-center,
+  &.center {
+    float: center;
+  }
+
+  &-right,
+  &.right {
+    float: right;
+  }
+}

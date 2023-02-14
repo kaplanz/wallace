@@ -27,9 +27,9 @@ nav.nav {
     padding: 0;
 
     li {
-      @extend .float;
-      @extend .round;
-      @extend .unlink;
+      @extend .fx-float;
+      @extend .fx-round;
+      @extend .fx-unlink;
 
       display: flex;
       list-style: none;
@@ -88,10 +88,10 @@ nav.nav {
     }
 
     > li {
-      @extend .outline;
+      @extend .fx-outline;
 
       ul.subnav {
-        @extend .tile;
+        @extend .fx-tile;
 
         display: none;
         flex-direction: column;

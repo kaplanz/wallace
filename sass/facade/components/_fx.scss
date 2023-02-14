@@ -1,0 +1,56 @@
+.fx,
+.effects {
+  &-animate,
+  &.animate {
+    transition: all .3s ease;
+  }
+
+  &-float,
+  &.float {
+    @extend .animate;
+
+    &:hover {
+      transform: translate(0, -2px);
+    }
+  }
+
+  &-outline,
+  &.outline {
+    border: .5px solid var(--color-border);
+  }
+
+  &-round,
+  &.round {
+    border-radius: var(--border-radius);
+  }
+
+  &-shadow,
+  &.shadow {
+    box-shadow: 0 2px 3px var(--color-shadow);
+
+    &.float:hover {
+      box-shadow: 0 4px 9px -5px var(--color-shadow);
+    }
+  }
+
+  &-tile,
+  &.tile {
+    @extend .outline;
+    @extend .round;
+    @extend .shadow;
+  }
+
+  &-unlink,
+  &.unlink {
+    color: inherit;
+    text-decoration: none;
+
+    &:visited,
+    &:visited:hover,
+    &:hover,
+    &:focus {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}

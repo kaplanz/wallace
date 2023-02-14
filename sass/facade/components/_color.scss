@@ -1,0 +1,54 @@
+.color {
+  @extend .fg, .bg;
+}
+
+.fg,
+.bg {
+  &.main {
+    @extend .primary;
+  }
+}
+
+.fg {
+  &-primary,
+  &.primary {
+    color: var(--color-fg);
+  }
+
+  &-secondary,
+  &.secondary {
+    color: var(--color-fg-2);
+  }
+
+  &-tertiary,
+  &.tertiary {
+    color: var(--color-fg-3);
+  }
+
+  &-accent,
+  &.accent {
+    color: var(--color-accent-fg);
+  }
+}
+
+.bg {
+  &-primary,
+  &.primary {
+    background-color: var(--color-bg);
+  }
+
+  &-secondary,
+  &.secondary {
+    background-color: var(--color-bg-2);
+  }
+
+  &-tertiary,
+  &.tertiary {
+    background-color: var(--color-bg-3);
+  }
+
+  &-accent,
+  &.accent {
+    background-color: var(--color-accent-bg);
+  }
+}

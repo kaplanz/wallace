@@ -1,0 +1,45 @@
+.msg,
+.message {
+  &.error,
+  &.warn,
+  &.info,
+  &.debug,
+  &.trace {
+    border-style: double;
+    border-width: thick;
+    border-radius: var(--border-radius);
+    padding: var(--spacer);
+
+    color: var(--color-fg);
+  }
+
+  &.error {
+    border-color: var(--color-user-error-fg);
+
+    background-color: var(--color-user-error-bg);
+  }
+
+  &.warn {
+    border-color: var(--color-user-warn-fg);
+
+    background-color: var(--color-user-warn-bg);
+  }
+
+  &.info {
+    border-color: var(--color-user-into-fg);
+
+    background-color: var(--color-user-info-bg);
+  }
+
+  &.debug {
+    border-color: var(--color-user-debug-fg);
+
+    background-color: var(--color-user-debug-bg);
+  }
+
+  &.trace {
+    border-color: var(--color-user-trace-fg);
+
+    background-color: var(--color-user-trace-bg);
+  }
+}

@@ -1,0 +1,35 @@
+.flex {
+  display: flex;
+
+  &.center {
+    &.horizontal {
+      justify-content: center;
+    }
+
+    &.vertical {
+      align-items: center;
+    }
+  }
+
+  &.repel {
+    justify-content: space-between;
+  }
+
+  &-column,
+  &.column {
+    @extend .vertical;
+
+    flex-direction: column;
+  }
+
+  &-row,
+  &.row {
+    @extend .horizontal;
+
+    flex-direction: row;
+  }
+
+  &.gap {
+    gap: var(--spacer);
+  }
+}

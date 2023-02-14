@@ -1,0 +1,22 @@
+.tx,
+.text {
+  &-left,
+  &.left {
+    text-align: left;
+  }
+
+  &-center,
+  &.center {
+    text-align: center;
+  }
+
+  &-right,
+  &.right {
+    text-align: right;
+  }
+
+  &-justify,
+  &.justify {
+    text-align: justify;
+  }
+}

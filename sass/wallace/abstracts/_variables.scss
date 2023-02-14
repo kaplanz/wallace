@@ -1,4 +1,5 @@
 // -- Screen --
+$screen-xs:  16rem;
 $screen-sm:  32rem;
 $screen-md:  48rem;
 $screen-lg:  72rem;
@@ -24,11 +25,16 @@ $screen-xl: 108rem;
     --color-bg-2:       var(--oc-gray-2);
     --color-bg-3:       var(--oc-gray-4);
     // Message
-    --color-user-error: var(--oc-red-7);
-    --color-user-info:  var(--oc-green-7);
-    --color-user-warn:  var(--oc-yellow-7);
-    --color-user-debug: var(--oc-blue-7);
-    --color-user-trace: var(--oc-cyan-7);
+    --color-user-error-bg: var(--oc-red-2);
+    --color-user-info-bg:  var(--oc-green-2);
+    --color-user-warn-bg:  var(--oc-yellow-2);
+    --color-user-debug-bg: var(--oc-blue-2);
+    --color-user-trace-bg: var(--oc-cyan-2);
+    --color-user-error-fg: var(--oc-red-7);
+    --color-user-info-fg:  var(--oc-green-7);
+    --color-user-warn-fg:  var(--oc-yellow-7);
+    --color-user-debug-fg: var(--oc-blue-7);
+    --color-user-trace-fg: var(--oc-cyan-7);
   }
   @media (prefers-color-scheme: dark) {
     // Accent
@@ -48,26 +54,34 @@ $screen-xl: 108rem;
     --color-bg-2:       var(--oc-gray-8);
     --color-bg-3:       var(--oc-gray-7);
     // Message
-    --color-user-error: var(--oc-red-4);
-    --color-user-info:  var(--oc-green-4);
-    --color-user-warn:  var(--oc-yellow-4);
-    --color-user-debug: var(--oc-blue-4);
-    --color-user-trace: var(--oc-cyan-4);
+    --color-user-error-bg: var(--oc-red-7);
+    --color-user-info-bg:  var(--oc-green-7);
+    --color-user-warn-bg:  var(--oc-yellow-7);
+    --color-user-debug-bg: var(--oc-blue-7);
+    --color-user-trace-bg: var(--oc-cyan-7);
+    --color-user-error-fg: var(--oc-red-4);
+    --color-user-info-fg:  var(--oc-green-4);
+    --color-user-warn-fg:  var(--oc-yellow-4);
+    --color-user-debug-fg: var(--oc-blue-4);
+    --color-user-trace-fg: var(--oc-cyan-4);
   }
 
   // -- Font --
+  // Defaults
+  --font-main-family: var(--font-family-sans);
   // Family
-  --font-family-mono:   "Fira Code";
-  --font-family-sans:   "Noto Sans";
-  --font-family-serif:  "Noto Serif";
+  --font-family-cursive: "Corinthia";
+  --font-family-mono:    "Fira Code";
+  --font-family-sans:    "Noto Sans";
+  --font-family-serif:   "Noto Serif";
   // Weight
-  --font-weight-bold:   600;
-  --font-weight-semi:   500;
-  --font-weight-normal: 400;
-  --font-weight-light:  300;
+  --font-weight-bold:    600;
+  --font-weight-semi:    500;
+  --font-weight-normal:  400;
+  --font-weight-light:   300;
   // Text
-  --font-size:          16px;
-  --line-height:        1.5;
+  --font-size:           16px;
+  --line-height:         1.5;
 
   // -- Shape --
   --border-radius: .5em;
