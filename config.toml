@@ -25,15 +25,15 @@ build_search_index = false
 # default languages.
 # Example:
 #     taxonomies = [
-#       {name = "tags", feed = true}, # each tag will have its own feed
+#       {name = "authors"}, # basic definition: no feed or pagination
 #       {name = "categories", paginate_by = 5},  # 5 items per page for a term
-#       {name = "authors"}, # Basic definition: no feed or pagination
+#       {name = "tags",       feed = true},      # each tag will have its own feed
 #     ]
 #
 taxonomies = [
-  { name = "authors", feed = true },
+  { name = "authors",    feed = true },
   { name = "categories", feed = true },
-  { name = "tags", feed = true },
+  { name = "tags",       feed = true },
 ]
 
 [markdown]
