@@ -15,39 +15,42 @@ permissions:
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
 
 jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    env:
+      ZOLA_VERSION: 0.17.2
     steps:
+      - name: Install Zola CLI
+        run: |
+          curl -SL "https://github.com/getzola/zola/releases/download/v${ZOLA_VERSION}/zola-v${ZOLA_VERSION}-x86_64-unknown-linux-gnu.tar.gz" | tar xzf - -C /usr/local/bin
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          submodules: true
-
+          submodules: recursive
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v3
       - name: Build with Zola
-        uses: kaplanz/zola-build-pages@main
-
+        run: |
+          zola build \
+            --base-url "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
         with:
-          path: "public/"
-
-  report-build-status:
-    # Reporting job
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Report Build Status
-        id: deployment
-        uses: actions/deploy-pages@v1
-        with:
-          emit_telemetry: true
+          path: "./public"
 
   # Deployment job
   deploy:
@@ -59,4 +62,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2
