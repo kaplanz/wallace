@@ -19,7 +19,7 @@ footer.footer {
     list-style: none;
 
     li {
-      @extend .fx-float;
+      @extend .fx, .float;
     }
   }
 }

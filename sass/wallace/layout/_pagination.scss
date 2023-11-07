@@ -6,7 +6,7 @@ ul.pagination {
   padding: 0;
 
   li {
-    @extend .fx-float;
+    @extend .fx, .float;
 
     padding: 0;
 

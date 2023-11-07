@@ -1,7 +1,7 @@
 article.blog,
 article.post {
   .meta {
-    @extend .fx-unlink;
+    @extend .fx, .unlink;
 
     color: var(--color-fg-3);
     font-size: 0.8em;
@@ -16,7 +16,7 @@ article.post {
       .author,
       .category,
       .tag {
-        @extend .fx-float;
+        @extend .fx, .float;
       }
     }
   }
