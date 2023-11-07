@@ -1,14 +1,14 @@
 <!-- Apache -->
 <!--
   @param icon:  Apache icon to display.
-  @param class: Clases to apply to the icon.
+  @param class: Classes to apply to the icon.
 -->
 {% macro apache(icon, class) %}
   <img class="apache {{ class }}" src="https://www.apache.org/icons/{{ icon }}.png"/>
 {% endmacro %}
 <!--
   @param path:  Path to file to auto generate icon.
-  @param class: Clases to apply to the icon.
+  @param class: Classes to apply to the icon.
 -->
 {% macro fticon(path, class) %}
   {% set ext = path | split(pat=".") | last | lower %}
