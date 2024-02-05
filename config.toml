@@ -42,11 +42,7 @@ taxonomies = [
 highlight_code = true
 
 # The theme to use for code highlighting.
-highlight_theme = "css"
-highlight_themes_css = [
-  { theme = "base16-ocean-dark",  filename = "assets/css/syntax/dark.css" },
-  { theme = "base16-ocean-light", filename = "assets/css/syntax/light.css" },
-]
+highlight_theme = "css" # use the special css color scheme
 
 # When set to "true", emoji aliases translated to their corresponding Unicode
 # emoji equivalent in the rendered Markdown files. (e.g.: :smile: => 😄)
