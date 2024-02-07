@@ -31,9 +31,9 @@ build_search_index = false
 #     ]
 #
 taxonomies = [
-  { name = "authors",    feed = true },
-  { name = "categories", feed = true },
-  { name = "tags",       feed = true },
+  { name = "authors",    paginate_by = 10, paginate_path = "", feed = true },
+  { name = "categories", paginate_by = 10, paginate_path = "", feed = true },
+  { name = "tags",       paginate_by = 10, paginate_path = "", feed = true },
 ]
 
 [markdown]

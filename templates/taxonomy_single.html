@@ -1,19 +1,39 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <article class="taxonomy-single">
+  <article class="blog">
     <h1 class="title">
       {{ taxonomy.name | title }}: {{ term.name | title }}
     </h1>
 
-    <div>
-      <ul>
-        {% for page in term.pages %}
-          <li>
-            <a href="{{ page.permalink }}">{{ page.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
+    <ul class="posts">
+      {% for post in paginator.pages | default(value=term.pages) %}
+        <li class="post">
+          <a class="fx-unlink" href="{{ post.permalink | safe }}">
+            <h2 class="title">{{ post.title }}</h2>
+          </a>
+
+          {{ macros::post_meta(post=post) }}
+
+          <div class="summary">
+            {% if not post.summary %}
+              {% set summary = post.content | striptags | split(pat=" ") | slice(end=50) | join(sep=" ") %}
+            {% endif %}
+            <p>
+              {{ post.summary | default(value=summary) | striptags | safe }}...
+            </p>
+            <a class="more" href="{{ post.permalink | trim_end_matches(pat="/") }}#continue-reading">
+              Read more...
+            </a>
+          </div>
+        </li>
+
+        {% if not loop.last %}
+          <hr/>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+    {{ macros::pagination() }}
   </article>
 {% endblock content %}
